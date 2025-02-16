@@ -3,32 +3,8 @@ from datetime import datetime
 import xml.etree.ElementTree as ET
 from typing import List, Dict
 import re
-import json
-
-# Constants for table names and their corresponding search strings
-TABLE_CONFIG = {
-    'incoming_money': 'You have received',
-    'payment_to_code_holders': 'Your payment of',
-    'transfers_to_mobile_numbers': 'transferred to',
-    'bank_transfers': 'You have transferred',
-    'internet_voice_bundle': 'Bundles and Packs',
-    'cash_power_bill_payments': 'MTN Cash Power',
-    'transtxns_initiate_by_third_parties': 'Message from debit receiver',
-    'withdrawals_from_agents': 'withdrawn',
-    'airtime': 'to Airtime with token',
-}
-
-TABLE_SCHEMA = {
-    'incoming_money': ['amount_received', 'sender', 'date', 'time', 'new_balance', 'transaction_id'],
-    'payment_to_code_holders': ['amount_paid', 'recipient', 'date', 'time', 'new_balance', 'transaction_id', 'payment_code'],
-    'transfers_to_mobile_numbers': ['amount_transferred', 'recipient', 'recipient_number', 'date', 'time', 'fee', 'new_balance', 'transaction_id'],
-    'bank_transfers': ['amount_transferred', 'recipient', 'date', 'time', 'fee', 'new_balance', 'transaction_id', 'bank_name'],
-    'internet_voice_bundle': ['date', 'time', 'new_balance', 'transaction_id', 'amount'],
-    'cash_power_bill_payments': ['date', 'time', 'new_balance', 'transaction_id', 'amount', 'token'],
-    'transtxns_initiate_by_third_parties': ['date', 'time', 'new_balance', 'transaction_amount', 'transaction_initiator', 'financial_transaction_id', 'external_transaction_id'],
-    'withdrawals_from_agents': ['date', 'time', 'new_balance', 'transaction_id', 'amount', 'agent_name', 'agent_number', 'fee'],
-    'airtime': ['date', 'time', 'new_balance', 'transaction_id', 'amount'],
-}
+from helpers import export_to_json
+from constants import TABLE_CONFIG
 
 TABLES = list(TABLE_CONFIG.keys())  # Dynamically generate TABLES
 SMS_TAG = 'sms'
@@ -284,19 +260,6 @@ def internet_voice_bundles(sms_data: Dict[str, List[str]]):
                    "data/internet_voice_bundles.json")
 
 
-def export_to_json(data, filename="airtime_payments.json"):
-    """
-    Exports a list of dictionaries to a JSON file.
-
-    Args:
-        data: A list of dictionaries to be exported.
-        filename: The name of the JSON file to create (default: "airtime_payments.json").
-    """
-
-    with open(filename, "w") as f:  # "w" for write mode
-        json.dump(data, f, indent=4)  # indent for pretty formatting
-    print(f"Data exported to {filename}")
-
 
 def payment_to_code_holders(sms_data: Dict[str, List[str]]):
     payment_to_code_holders_table = sms_data['payment_to_code_holders']
@@ -416,12 +379,12 @@ def main():
         # populate_received_money_table(sms_data)
         # transfer_to_mobile_numbers(sms_data)
         # populate_airtime_table(sms_data)
-        # cash_power_bill_payments(sms_data)
+        cash_power_bill_payments(sms_data)
         # withdrawals_from_agents(sms_data)
         # internet_voice_bundles(sms_data)
         # payment_to_code_holders(sms_data)
         # bank_transfers(sms_data)
-        txns_intitiated_by_third_parties(sms_data)
+        # txns_intitiated_by_third_parties(sms_data)
 
 
 if __name__ == "__main__":
