@@ -381,8 +381,8 @@ def main():
         # populate_airtime_table(sms_data)
         # cash_power_bill_payments(sms_data)
         # withdrawals_from_agents(sms_data)
-        internet_voice_bundles(sms_data)
-        # payment_to_code_holders(sms_data)
+        # internet_voice_bundles(sms_data)
+        payment_to_code_holders(sms_data)
         # bank_transfers(sms_data)
         # txns_intitiated_by_third_parties(sms_data)
 
