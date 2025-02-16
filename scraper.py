@@ -424,5 +424,5 @@ def main():
         txns_intitiated_by_third_parties(sms_data)
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
