@@ -1,0 +1,210 @@
+{
+    "info": {
+        "_postman_id": "dcdabe2d-cd20-4ad0-8384-f1f15325faff",
+        "name": "Momo App",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Airtime_Payments",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://127.0.0.1:5000/",
+                    "path": [
+                        ""
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "5000"
+                }
+            }
+        },
+        {
+            "name": "Incoming_money",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://127.0.0.1:5000/incoming_money",
+                    "path": [
+                        "incoming_money"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "5000"
+                }
+            }
+        },
+        {
+            "name": "Transfers to mobile money",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://127.0.0.1:5000/transfers_to_mobile_numbers",
+                    "path": [
+                        "transfers_to_mobile_numbers"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "5000"
+                }
+            }
+        },
+        {
+            "name": "Payment to code holders",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://127.0.0.1:5000/payment-to-code-holders",
+                    "path": [
+                        "payment-to-code-holders"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "5000"
+                }
+            }
+        },
+        {
+            "name": "Bank transfers",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://127.0.0.1:5000/bank-transfers",
+                    "path": [
+                        "bank-transfers"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "5000"
+                }
+            }
+        },
+        {
+            "name": "Internet-voice-bundles",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://127.0.0.1:5000/internet-voice-bundles",
+                    "path": [
+                        "internet-voice-bundles"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "5000"
+                }
+            }
+        },
+        {
+            "name": "Cash power bill payments",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://127.0.0.1:5000/cash-power-bill-payments",
+                    "path": [
+                        "cash-power-bill-payments"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "5000"
+                }
+            }
+        },
+        {
+            "name": "Transactions initiated from third parties",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://127.0.0.1:5000/txns-from-third-parties",
+                    "path": [
+                        "txns-from-third-parties"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "5000"
+                }
+            }
+        },
+        {
+            "name": "Withdrawals from agents",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://127.0.0.1:5000/withdrawals-from-agents",
+                    "path": [
+                        "withdrawals-from-agents"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "5000"
+                }
+            }
+        },
+        {
+            "name": "Get stats",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://127.0.0.1:5000/get-stats",
+                    "path": [
+                        "get-stats"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "5000"
+                }
+            }
+        }
+    ]
+}
